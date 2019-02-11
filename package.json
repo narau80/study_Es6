@@ -1,0 +1,25 @@
+{
+  "name": "study_clone_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "es6_0207.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/narau80/study_Es6.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/narau80/study_Es6/issues"
+  },
+  "homepage": "https://github.com/narau80/study_Es6#readme",
+  "dependencies": {
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+}
