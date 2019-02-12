@@ -1,0 +1,16 @@
+# npm 디버그 기록
+*.log
+
+# 프로젝트 의존성
+node_modules
+
+# macOS 폴더 속성
+.DS_Store
+
+# 임시 파일
+*.tmp
+*~
+
+# ES6 소스만 추적하고 자동으로 생성되는 ES5 파일은 추적하지 않음
+dist
+public/dist
