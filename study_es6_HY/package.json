@@ -1,0 +1,15 @@
+{
+  "name": "hy",
+  "version": "1.0.0",
+  "description": "= Learning JavaScript, 3rd Edition\r == Chapter 2: JavaScript Development Tools\r  In this chapter we're learning about GIt and other\r  development tools.",
+  "main": "index.js",
+  "dependencies": {
+    "underscore": "^1.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
