@@ -1,0 +1,69 @@
+
+
+/* Git Bash */
+
+~: 홈디렉토리 , 일반적으로 파일을 저장하는 디렉토리
+
+버전 컨트롤 : 깃에서 추적하지 않았으면 하는 파일들  즉, 빌드과정에서 생기는 파일, 임시 파일 같은 것.
+(.gitignore)
+
+$ git init : 해당 디렉토리에 .git을 생성, 프로젝트 저장소를 만드는 명령어
+$ git status : 저장소의 현재 상태를 출력하는 명령
+
+깃 저장소를 사용하는 작업의 기본 단위 는 "커밋"
+$ git add .gitignore : 깃에 gitignore파일을 명시적으로 저장소에 추가, 대기상태
+$ git commit-m "Initial commit: added .gitignore." :  -m  메세지 기록, log로 확인 가능
+
+commit 시 에러 날 경우,
+
+$  git config --global user.email "you@example.com"
+$  git config --global user.name "Your Name"
+
+
+$ git log
+$ git add -A : 작업한 모든 것을 커밋 대기상태로 만듬.
+
+
+
+
+/* cmd 명령 프롬프트 */
+$ node -v 
+$ npm -v
+$ npm install underscore
+$ npm install underscore@1.8.0
+$ npm init
+npm은 package.json 파일을 통해 의존성을 관리함.필요 패키지를 간결하게 정리.
+1.일반 의존성
+2.개발 의존성
+  앱실행할 때는 필요없음. 프로젝트를 개발할 때 필요하거나 도음이 되는 패키지.
+$ npm install --save underscore       //package.json에 등록
+node_modules디렉토리삭제하여도 package.json을 보고 npm install하여 다시 재설치됨.
+
+$ npm install -g gulp    //전역에 gulp 설치
+$ npm install --save-dev gulp
+
+gulpgile.js파일생성
+$ gulp   //설치확인 가능(gulpfile.js 생성한 파일 확인)
+
+$ npm install --save-dev babel-preset-es2015   
+.babelrc 파일생성
+$ npm install --save-dev gulp-babel
+
+error: cannot find module 'babel-core'경우
+$ npm install --save-dev @babel/core
+
+es6/test.js파일에 코드 작성하여 babel 되는지 테스트
+$node ../ls6/es6/test.js
+$node ../ls6/dist/test.js
+
+$npm install -g eslint
+$eslint --init
+$npm install --save-dev gulp-eslint
+
+gulpfile.js에 ESLint 추가
+$gulp
+
+
+
+
+
