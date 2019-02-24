@@ -13,24 +13,27 @@ let funds = 50;//시작조건
 let round =0;
 while(funds > 1 && funds <100){
 	round++;
-	console.log('round ${round}:');
-	console.log('\tstarting funds: ${funds}p');
+	console.log(`round ${round}:`);
+	console.log(`\tstarting funds: ${funds}p`);
 	//funds = funds + 2;
 	//funds = funds - 1;
 	//돈 걸기
-	let bets = {crown:0, anchor:0, heart:0, spade:0, diamond:0};
+	let bets = {crown:0, anchor:0, heart:0, spade:0,club:0, diamond:0};
 	let totalBet = rand(1, funds);
+	console.log(`\ttotalBet: ${totalBet}`);
 	if(totalBet ===7){
 		totalBet = funds;
 		bets.heart = totalBet;
+		console.log(`\ttotalBet: ${totalBet}`);
 	}else{
 		//판돈 나누기
 		let remaining = totalBet;
 		do{
 			let bet = rand(1, remaining);
 			let face = randFace();
+			console.log(`\tbet : ${bet} , face : ${face}`);
 			bets[face] = bets[face] + bet;
-			remaing = remaining - bet;
+			remaining = remaining - bet;
 		}while(remaining > 0);
 
 	}
@@ -70,6 +73,6 @@ while(funds > 1 && funds <100){
 		if(bets[face] >0) winnings = winnings + bets[face];
 	}
 	funds = funds + winnings;
-	console.log(`\tending funds:${funds}`);
+	console.log(`\twinnings funds:${winnings}`);
 }
 console.log(`\tending funds:${funds}`);
