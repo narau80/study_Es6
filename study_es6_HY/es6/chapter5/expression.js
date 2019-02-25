@@ -54,8 +54,8 @@ while(1){
 }
 //console.log(`stopped at ${num}`);
 
-console.log(3+5+"8");
-console.log("3"+5+8);
+console.log(3+5+"8");//'8'+'8'
+console.log("3"+5+8);//'3' +'5'+'8'
 
 
 
