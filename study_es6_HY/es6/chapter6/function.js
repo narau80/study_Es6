@@ -98,7 +98,44 @@ function addPrefix(prefix,...words){
 function ff(a,b='default',c=3) {
 	return `${a} - ${b} - ${c}`;
 }
-console.log(ff(5,6,7));//5 - 6 -7
-console.log(ff(5,6));//5 - 6 - 3
-console.log(ff(5));//5 - default - 3
-console.log(ff());//undfined - default - 3
+//console.log(ff(5,6,7));//5 - 6 -7
+//console.log(ff(5,6));//5 - 6 - 3
+//console.log(ff(5));//5 - default - 3
+//console.log(ff());//undfined - default - 3
+
+const y = {
+	name: 'Wallace', //원시 값 프로퍼티
+	bark: function(){ return 'Woof!';}, //함수 프로퍼티(메서드)
+}
+
+const y2 ={
+	name:'Wallace',//원시 값 프로퍼티
+	bark(){return 'Woof!';},//함수 프로퍼티(메서드)
+}
+
+//console.log(y2.name + ", "+ y2.bark());
+
+const y3={
+	name:'wallace',
+	speak(){return `My name is ${this.name}!`;},
+}
+
+//console.log(y3.speak());
+const speak = y3.speak;
+console.log(speak === y3.speak);
+console.log(speak());
+
+const y4={
+	name:'Julie',
+	greetBackwards: function(){
+		function getReversName(){
+			let nameBackwards='';
+			for(let i= this.name.length -1; i>=0;i++){
+				nameBackwards += this.name[i];
+			}
+			return nameBackwards;
+		}
+		return `${getReversName()} si eman ym, olleH`;
+	},
+};
+y4.greetBackwards();
