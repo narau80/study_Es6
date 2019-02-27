@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Bin</title>
+</head>
+<body>
+<ul>
+	<li>javascript</li>
+	<li>java</li>
+	<li>python</li>
+	<li>django</li>
+</ul>
+</body>
+</html>
+
+<script type="text/javascript">
+
+	/* 이해안됨. 다시 공부할 것  : ) */
+	var list=document.querySelectorAll('li');
+
+	for(let i=0;i<list.length;i++){// let을 쓰면 문제해결
+		list[i].addEventListener("click",function(){
+			console.log(i+'번째 리스트입니다.');//i clouser변수 = 지역변수
+		});//i값을 공유
+	}
+</script>
