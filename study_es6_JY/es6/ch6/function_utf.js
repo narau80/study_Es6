@@ -1,36 +1,37 @@
 // p167
+
 function sayHello() {
-	// ÇÔ¼ö ¹Ùµğ´Â ¿©´ÂÁß°ıÈ£·Î ½ÃÀÛÇÏ°í
+	// í•¨ìˆ˜ ë°”ë””ëŠ” ì—¬ëŠ”ì¤‘ê´„í˜¸ë¡œ ì‹œì‘í•˜ê³ 
 
 	console.log("Hello world!");
 	console.log("i Hola mundo!");
 	console.log("Hallo wereld!");
 
-	//´İ´Â Áß°ıÈ£·Î ³¡³³´Ï´Ù.
+	//ë‹«ëŠ” ì¤‘ê´„í˜¸ë¡œ ëë‚©ë‹ˆë‹¤.
 }
-sayHello();	// ÇÔ¼ö¸¦ È£ÃâÇØ¾ß ¹ÙµğÀÇ console.log °¡ ½ÇÇàµÇ¾î È­¸é¿¡ ³ëÃâ
+sayHello();	// í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•´ì•¼ ë°”ë””ì˜ console.log ê°€ ì‹¤í–‰ë˜ì–´ í™”ë©´ì— ë…¸ì¶œ
 
 // p168~169
 function getGreating() {
 	return "Hello world!";
-} //ÇÔ¼ö¸¦ Áï½Ã Á¾·áÇÏ°í °ªÀ» ¹İÈ¯
+} //í•¨ìˆ˜ë¥¼ ì¦‰ì‹œ ì¢…ë£Œí•˜ê³  ê°’ì„ ë°˜í™˜
 
 //getGreating();	//console.log(getGreeting());	->	Hello world!
 //getGreating;		//console.log(getGreating);	->	[Function:getGreating]
 
-const f = getGreating; //ÇÔ¼ö¸¦ º¯¼ö¿¡ ÇÒ´ç ÇÏ¸é º¯¼ö¸íÀ¸·Î ÇÔ¼ö¸¦ È£Ãâ
+const f = getGreating; //í•¨ìˆ˜ë¥¼ ë³€ìˆ˜ì— í• ë‹¹ í•˜ë©´ ë³€ìˆ˜ëª…ìœ¼ë¡œ í•¨ìˆ˜ë¥¼ í˜¸ì¶œ
 f(); //console.log(f()); -> "Hello world!"
 
 const o = {};
-o.f = getGreating; // ÇÔ¼ö¸¦ °´Ã¼ ÇÁ·ÎÆÛÆ¼¿¡ ÇÒ´ç
+o.f = getGreating; // í•¨ìˆ˜ë¥¼ ê°ì²´ í”„ë¡œí¼í‹°ì— í• ë‹¹
 o.f();	//console.log(o.f());	->	Hello world!
 
 const arr = [1,2,3]; 
-arr[1] = getGreating; // ¹è¿­ ¿ä¼Ò¿¡ ÇÒ´ç 
+arr[1] = getGreating; // ë°°ì—´ ìš”ì†Œì— í• ë‹¹ 
 arr[1](); //console.log(arr[1]());	->	Hello world!
 
 // p170
-function avg(a,b){     // a¿Í b¸¦ Á¤ÇØÁø ¸Å°³º¯¼ö
+function avg(a,b){     // aì™€ bë¥¼ ì •í•´ì§„ ë§¤ê°œë³€ìˆ˜
 	return (a + b) / 2;
 }
 avg(5, 10); //7.5
@@ -43,56 +44,56 @@ console.log(avg(a, b));
 
 // p171
 function f(x){
-	console.log(`f ³»ºÎ: x = ${x}`);
+	console.log(`f ë‚´ë¶€: x = ${x}`);
 	x = 5;
-	console.log(`f ³»ºÎ: x = ${x} (ÇÒ´ç ÈÄ)`);
+	console.log(`f ë‚´ë¶€: x = ${x} (í• ë‹¹ í›„)`);
 }
 
 let x = 3;
-console.log(`f¸¦ È£ÃâÇÏ±â Àü: x = ${x}`);
+console.log(`fë¥¼ í˜¸ì¶œí•˜ê¸° ì „: x = ${x}`);
 f(x);
-console.log(`f¸¦ È£ÃâÇÑ ´ÙÀ½: x = ${x}`);
+console.log(`fë¥¼ í˜¸ì¶œí•œ ë‹¤ìŒ: x = ${x}`);
 
 /*
-	½ÇÇà°á°ú Ã¥ ÂüÁ¶
+	ì‹¤í–‰ê²°ê³¼ ì±… ì°¸ì¡°
 */
 
 // p172 (1)
 function f(o){
-	o.message = `f ¾È¿¡ ¼öÁ¤ÇÔ (ÀÌÀü °ª: '${o.message}')`;
+	o.message = `f ì•ˆì— ìˆ˜ì •í•¨ (ì´ì „ ê°’: '${o.message}')`;
 }
 let o = {
-	message: "ÃÊ±â °ª"
+	message: "ì´ˆê¸° ê°’"
 };
 
-console.log(`f¸¦ È£ÃâÇÏ±â Àü : o.message = "${o.message}"`);
+console.log(`fë¥¼ í˜¸ì¶œí•˜ê¸° ì „ : o.message = "${o.message}"`);
 f(o);
-console.log(`f¸¦ È£ÃâÇÑ ´ÙÀ½ : o.message = "${o.message}"`);
+console.log(`fë¥¼ í˜¸ì¶œí•œ ë‹¤ìŒ : o.message = "${o.message}"`);
 
-// f¸¦ È£ÃâÇÏ±â Àü: o.message = "ÃÊ±â °ª"
-// f¸¦ È£ÃâÇÑ ´ÙÀ½ : o.message="f ¾È¿¡¼­ ¼öÁ¤ÇÔ (ÀÌÀü °ª: 'ÃÊ±â °ª')"
+// fë¥¼ í˜¸ì¶œí•˜ê¸° ì „: o.message = "ì´ˆê¸° ê°’"
+// fë¥¼ í˜¸ì¶œí•œ ë‹¤ìŒ : o.message="f ì•ˆì—ì„œ ìˆ˜ì •í•¨ (ì´ì „ ê°’: 'ì´ˆê¸° ê°’')"
 
 
 // p172 (2)
 function f (o){
-	o.message = "f¿¡¼­ ¼öÁ¤ÇÔ";
+	o.message = "fì—ì„œ ìˆ˜ì •í•¨";
 	o = {
-		message : "»õ·Î¿î °´Ã¼!"
+		message : "ìƒˆë¡œìš´ ê°ì²´!"
 	};
-	console.log(`f ³»ºÎ: o.message = "${o.message}" (ÇÒ´ç ÈÄ)`);
+	console.log(`f ë‚´ë¶€: o.message = "${o.message}" (í• ë‹¹ í›„)`);
 }
 
 let o = {
-	message: 'ÃÊ±â°ª'
+	message: 'ì´ˆê¸°ê°’'
 };
-console.log(`f¸¦ È£ÃâÇÏ±â Àü: o.message = "${o.message}"`);
+console.log(`fë¥¼ í˜¸ì¶œí•˜ê¸° ì „: o.message = "${o.message}"`);
 f(o);
-console.log(`f¸¦ È£ÃâÇÑ ´ÙÀ½: o.message = "${o.message}"`);
+console.log(`fë¥¼ í˜¸ì¶œí•œ ë‹¤ìŒ: o.message = "${o.message}"`);
 
 /*
-"f¸¦ È£ÃâÇÏ±â Àü: o.message = \"ÃÊ±â°ª\""
-"f ³»ºÎ: o.message = \"»õ·Î¿î °´Ã¼!\" (ÇÒ´ç ÈÄ)"
-"f¸¦ È£ÃâÇÑ ´ÙÀ½: o.message = \"f¿¡¼­ ¼öÁ¤ÇÔ\""
+"fë¥¼ í˜¸ì¶œí•˜ê¸° ì „: o.message = \"ì´ˆê¸°ê°’\""
+"f ë‚´ë¶€: o.message = \"ìƒˆë¡œìš´ ê°ì²´!\" (í• ë‹¹ í›„)"
+"fë¥¼ í˜¸ì¶œí•œ ë‹¤ìŒ: o.message = \"fì—ì„œ ìˆ˜ì •í•¨\""
 */
 
 
@@ -158,8 +159,8 @@ const o = {
 }
 console.log(o);
 console.log(o.bark());
-//À§¿Í ¾Æ·¡´Â µ¿ÀÏ, {name : 'Wallace', bark : [Function : bark]}
-//¸Ş¼­µå?!¸¦ È£ÃâÇÏ¸é "Woof!"
+//ìœ„ì™€ ì•„ë˜ëŠ” ë™ì¼, {name : 'Wallace', bark : [Function : bark]}
+//ë©”ì„œë“œ?!ë¥¼ í˜¸ì¶œí•˜ë©´ "Woof!"
 const b = {
 	name : "Wallace",
 	bark() {return 'Woof!';},
@@ -170,14 +171,14 @@ console.log(b.bark());
 // p177
 const o = {
 	name : "Wallace",
-	speak() {return `My name is ${this.name}`;}, //this´Â o¿¡ ¹­ÀÓ
-}	//this°¡ o¿¡ ¹­ÀÎ ÀÌÀ¯´Â speak°¡ oÀÇ ÇÁ·ÎÆÛÆ¼¿©¼­°¡ ¾Æ´Ï¶ó, o¿¡¼­ speak¸¦ È£ÃâÇß±â ¶§¹®
+	speak() {return `My name is ${this.name}`;}, //thisëŠ” oì— ë¬¶ì„
+}	//thisê°€ oì— ë¬¶ì¸ ì´ìœ ëŠ” speakê°€ oì˜ í”„ë¡œí¼í‹°ì—¬ì„œê°€ ì•„ë‹ˆë¼, oì—ì„œ speakë¥¼ í˜¸ì¶œí–ˆê¸° ë•Œë¬¸
 
 console.log(o.speak());	//My Name is Wallace
 
 const speak = o.speak;
 speak === o.speak; 
-console.log(speak === o.speak); // true; µÎ º¯¼ö´Â °°Àº ÇÔ¼ö¸¦ °¡¸®Åµ´Ï´Ù.
+console.log(speak === o.speak); // true; ë‘ ë³€ìˆ˜ëŠ” ê°™ì€ í•¨ìˆ˜ë¥¼ ê°€ë¦¬í‚µë‹ˆë‹¤.
 speak(); 
 console.log(speak());// my name is undefined;
 
@@ -196,7 +197,7 @@ const o = {
 	},
 };
 o.greetBackwards();
-console.log(o.greetBackwards());	//¿¡·¯¹ß»ı
+console.log(o.greetBackwards());	//ì—ëŸ¬ë°œìƒ
 
 // p178 (2)
 const o = {
@@ -222,8 +223,8 @@ const f = function(){
 	// ....
 
 };
-/* ÇÔ¼öÀÇ ¼±¾ğ°ú µ¿µî. ½Äº°ÀÚ f°¡ ÀÌ ÇÔ¼ö¸¦ °¡¸®Å²´Ù.
-ÀÏ¹İÀûÀÎ ÇÔ¼ö ¼±¾ğ°úÀÇ Â÷ÀÌÁ¡Àº ÇÔ¼ö Ç¥Çö½ÄÀ¸·Î ÀÍ¸í ÇÔ¼ö¸¦ ¸¸µç ´ÙÀ½ ±× ÇÔ¼ö¸¦ º¯¼ö¿¡ ÇÒ´çÇÑ Á¡.
+/* í•¨ìˆ˜ì˜ ì„ ì–¸ê³¼ ë™ë“±. ì‹ë³„ì fê°€ ì´ í•¨ìˆ˜ë¥¼ ê°€ë¦¬í‚¨ë‹¤.
+ì¼ë°˜ì ì¸ í•¨ìˆ˜ ì„ ì–¸ê³¼ì˜ ì°¨ì´ì ì€ í•¨ìˆ˜ í‘œí˜„ì‹ìœ¼ë¡œ ìµëª… í•¨ìˆ˜ë¥¼ ë§Œë“  ë‹¤ìŒ ê·¸ í•¨ìˆ˜ë¥¼ ë³€ìˆ˜ì— í• ë‹¹í•œ ì .
 */
 
 // p180 (1)
@@ -231,9 +232,9 @@ const g = function f(){
 	// ....
 
 } 
-/* ÇÔ¼ö¿¡ ÀÌ¸§À» Á¤ÇÏ°í ´Ù½Ã º¯¼ö¿¡ ÇÒ´çÇÏ¸é?
-ÀÌ¸§ g¿¡ ¿ì¼±¼øÀ§°¡ ÀÖÀ½. ÇÔ¼ö ¹Ù±ù¿¡¼­ ÇÔ¼ö¿¡ Á¢±ÙÇÒ ¶§´Â g¸¦ ½á¾ß ÇÑ´Ù. f·Î Á¢±ÙÇÏ¸é º¯¼ö°¡ Á¤ÀÇµÇÁö ¾Ê¾Ò´Ù´Â ¿¡·¯ ¹ß»ı
-¾Æ·¡ ¿¹Á¦¿Í °°ÀÌ ÇÔ¼ö ¾È¿¡¼­ ÀÚ±â ÀÚ½ÅÀ» È£ÃâÇÒ ¶§(Àç±Í) ÀÌ·± ¹æ½ÄÀÌ ÇÊ¿äÇÒ ¼ö ÀÖÀ½.
+/* í•¨ìˆ˜ì— ì´ë¦„ì„ ì •í•˜ê³  ë‹¤ì‹œ ë³€ìˆ˜ì— í• ë‹¹í•˜ë©´?
+ì´ë¦„ gì— ìš°ì„ ìˆœìœ„ê°€ ìˆìŒ. í•¨ìˆ˜ ë°”ê¹¥ì—ì„œ í•¨ìˆ˜ì— ì ‘ê·¼í•  ë•ŒëŠ” gë¥¼ ì¨ì•¼ í•œë‹¤. fë¡œ ì ‘ê·¼í•˜ë©´ ë³€ìˆ˜ê°€ ì •ì˜ë˜ì§€ ì•Šì•˜ë‹¤ëŠ” ì—ëŸ¬ ë°œìƒ
+ì•„ë˜ ì˜ˆì œì™€ ê°™ì´ í•¨ìˆ˜ ì•ˆì—ì„œ ìê¸° ìì‹ ì„ í˜¸ì¶œí•  ë•Œ(ì¬ê·€) ì´ëŸ° ë°©ì‹ì´ í•„ìš”í•  ìˆ˜ ìˆìŒ.
 */
 
 // p180 (2)
@@ -242,29 +243,29 @@ const g = function f(stop) {
 	f(true);
 };
 g(false);
-console.log(g()); // °á°ú : f stopped ÀÌ ¸Å¿ì ¸¹ÀÌ Ãâ·ÂµÇ´Ù°¡ ¸ØÃã.
+console.log(g()); // ê²°ê³¼ : f stopped ì´ ë§¤ìš° ë§ì´ ì¶œë ¥ë˜ë‹¤ê°€ ë©ˆì¶¤.
 /*
-ÇÔ¼ö ¾È¿¡¼­´Â f¸¦ ½á¼­ ÀÚ±â ÀÚ½ÅÀ» ÂüÁ¶, ÇÔ¼ö ¹Ù±ù¿¡¼­´Â g¸¦ ½á¼­ ÇÔ¼ö¸¦ È£Ãâ.
-(ÀÌ¸§ ºÙÀº ÇÔ¼ö Ç¥Çö½ÄÀÌ ¾î¶»°Ô µ¿ÀÛÇÏ´ÂÁö º¸±â À§ÇÔÀÌ¸ç, ÇÔ¼ö¿¡ µÎ °¡Áö ÀÌ¸§ ºÙÀÌ´Â °Ç ÁÁÁö ¾ÊÀ½)
+í•¨ìˆ˜ ì•ˆì—ì„œëŠ” fë¥¼ ì¨ì„œ ìê¸° ìì‹ ì„ ì°¸ì¡°, í•¨ìˆ˜ ë°”ê¹¥ì—ì„œëŠ” gë¥¼ ì¨ì„œ í•¨ìˆ˜ë¥¼ í˜¸ì¶œ.
+(ì´ë¦„ ë¶™ì€ í•¨ìˆ˜ í‘œí˜„ì‹ì´ ì–´ë–»ê²Œ ë™ì‘í•˜ëŠ”ì§€ ë³´ê¸° ìœ„í•¨ì´ë©°, í•¨ìˆ˜ì— ë‘ ê°€ì§€ ì´ë¦„ ë¶™ì´ëŠ” ê±´ ì¢‹ì§€ ì•ŠìŒ)
 */
 
 
 //p181
-//È­»ìÇ¥ Ç¥±â¹ı (»õ·ÎÃß°¡)
-//function À» »ı·«ÇØµµ µÈ´Ù
-//ÇÔ¼ö¿¡ ¸Å°³º¯¼ö°¡ ´Ü ÇÏ³ª »ÓÀÌ¶ó¸é (())µµ »ı·«ÇÒ ¼ö ÀÖ´Ù.
-//ÇÔ¼ö ¹Ùµğ°¡ Ç¥Çö½Ä ÇÏ³ª¶ó¸é Áß°ıÈ£¿Í return ¹®µµ »ı·«ÇÒ ¼ö ÀÖ´Ù.
+//í™”ì‚´í‘œ í‘œê¸°ë²• (ìƒˆë¡œì¶”ê°€)
+//function ì„ ìƒëµí•´ë„ ëœë‹¤
+//í•¨ìˆ˜ì— ë§¤ê°œë³€ìˆ˜ê°€ ë‹¨ í•˜ë‚˜ ë¿ì´ë¼ë©´ (())ë„ ìƒëµí•  ìˆ˜ ìˆë‹¤.
+//í•¨ìˆ˜ ë°”ë””ê°€ í‘œí˜„ì‹ í•˜ë‚˜ë¼ë©´ ì¤‘ê´„í˜¸ì™€ return ë¬¸ë„ ìƒëµí•  ìˆ˜ ìˆë‹¤.
 
 const f1 = function() {return "hello!";}
-//¶Ç´Â
+//ë˜ëŠ”
 const f1 = () => "hello!";
 
 const f2 = function(name) {return `hello, ${name}!`;}
-//¶Ç´Â
+//ë˜ëŠ”
 const f2 = name => `hello, ${name}!`;
 
 const f3 = function(a, b){return a + b;}
-//¶Ç´Â
+//ë˜ëŠ”
 const f3 = (a,b) => a + b;
 
 // p182
@@ -285,23 +286,23 @@ o.greetBackwards();
 console.log(o.greetBackwards());	//eiluj si eman ym , olleH
 
 //p183 (1)
-//call ¸Ş¼­µå
-//call ¸Ş¼­µå´Â ¸ğµç ÇÔ¼ö¿¡¼­ »ç¿ëÇÒ ¼ö ÀÖÀ¸¸ç, this¸¦ Æ¯Á¤ °ªÀ¸·Î ÁöÁ¤ÇÒ ¼ö ÀÖ´Ù.
+//call ë©”ì„œë“œ
+//call ë©”ì„œë“œëŠ” ëª¨ë“  í•¨ìˆ˜ì—ì„œ ì‚¬ìš©í•  ìˆ˜ ìˆìœ¼ë©°, thisë¥¼ íŠ¹ì • ê°’ìœ¼ë¡œ ì§€ì •í•  ìˆ˜ ìˆë‹¤.
 
 const bruce = {name : "Bruce"};
 const madeline = {name : "Madeline"};
 
-//ÀÌ ÇÔ¼ö´Â ¾î¶² °´Ã¤¿¡µµ ¿¬°áµÇÁö ¾Ê¾ÒÁö¸¸ this¸¦ »ç¿ëÇÑ´Ù.
+//ì´ í•¨ìˆ˜ëŠ” ì–´ë–¤ ê°ì±„ì—ë„ ì—°ê²°ë˜ì§€ ì•Šì•˜ì§€ë§Œ thisë¥¼ ì‚¬ìš©í•œë‹¤.
 function greet() {
 	return `Hello, I'm ${this.name}!`;
 }
 
 greet();
-console.log(greet());	//"Hello, I'm  undefined!" - this´Â ¾îµğ¿¡µµ ¹­ÀÌÁö ¾Ê¾Ò½À´Ï´Ù.
+console.log(greet());	//"Hello, I'm  undefined!" - thisëŠ” ì–´ë””ì—ë„ ë¬¶ì´ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.
 greet.call(bruce);
-console.log(greet.call(bruce));	//"Hello, I'm  Bruce!" - this´Â bruce
+console.log(greet.call(bruce));	//"Hello, I'm  Bruce!" - thisëŠ” bruce
 greet.call(madeline);
-console.log(greet.call(madeline));	//"Hello, I'm  Madeline!" - this´Â madeline
+console.log(greet.call(madeline));	//"Hello, I'm  Madeline!" - thisëŠ” madeline
 
 
 // p183 (2) ~ 184 (1)
@@ -316,13 +317,13 @@ function update(birthYear, occupation) {
 	this. occupation =  occupation;
 }
 
-//callÀÇ Ã¹¹øÂ° ¸Å°³º¯¼ö´Â this·Î »ç¿ëÇÒ °ª, ¸Å°³º¯¼ö°¡ ´õ ÀÖÀ¸¸é ±× ¸Å°³º¯¼ö´Â È£ÃâÇÏ´Â ÇÔ¼ö·Î Àü´Ş(¸Å°³º¯¼ö¸¦ Á÷Á¢ ¹ŞÀ½)
+//callì˜ ì²«ë²ˆì§¸ ë§¤ê°œë³€ìˆ˜ëŠ” thisë¡œ ì‚¬ìš©í•  ê°’, ë§¤ê°œë³€ìˆ˜ê°€ ë” ìˆìœ¼ë©´ ê·¸ ë§¤ê°œë³€ìˆ˜ëŠ” í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜ë¡œ ì „ë‹¬(ë§¤ê°œë³€ìˆ˜ë¥¼ ì§ì ‘ ë°›ìŒ)
 update.call(bruce, 1949, 'singer');
 console.log(bruce);	// {name : "Bruce", birthYear: 1949, occupation: "singer"} 
 update.call(madeline, 1942, 'actress');
 console.log(madeline);	//{ name: 'Madeline', birthYear: 1942, occupation: 'actress' }
 
-// apply´Â ¸Å°³º¯¼ö¸¦ ¹è¿­·Î ¹ŞÀ½. ±× ¿Ü¿£ call°ú ¿ÏÀüÈ÷ °°À½
+// applyëŠ” ë§¤ê°œë³€ìˆ˜ë¥¼ ë°°ì—´ë¡œ ë°›ìŒ. ê·¸ ì™¸ì—” callê³¼ ì™„ì „íˆ ê°™ìŒ
 update.apply(bruce, [1955, "actor"]);
 console.log(bruce);	//{name : "Bruce", birthYear: 1955, occupation: "actor"} 
 update.apply(madeline, [1918, "writer"]);
@@ -330,7 +331,7 @@ console.log(madeline);	//{ name: 'Madeline', birthYear: 1918, occupation: 'write
 
 
 // p184 (2)
-//apply´Â ¹è¿­ ¿ä¼Ò¸¦ ÇÔ¼ö ¸Å°³º¯¼ö·Î »ç¿ëÇÒ ¶§ À¯¿ëÇÔ
+//applyëŠ” ë°°ì—´ ìš”ì†Œë¥¼ í•¨ìˆ˜ ë§¤ê°œë³€ìˆ˜ë¡œ ì‚¬ìš©í•  ë•Œ ìœ ìš©í•¨
 const arr = [2, 3, -5, 15, 7];
 Math.min.apply(null, arr);
 console.log(Math.min.apply(null, arr));	// -5
@@ -354,8 +355,8 @@ console.log(Math.max(...arr)); // 15
 
 
 // p185 (1)
-//thisÀÇ °ªÀ» ¹Ù²Ü¼ö ÀÖ´Â ¸¶Áö¸· ÇÔ¼ö´Â bind
-//bind¸¦ »ç¿ëÇÏ¸é ÇÔ¼öÀÇ this °ªÀ» ¿µ±¸È÷ ¹Ù²Ü¼ö ÀÖ´Ù.
+//thisì˜ ê°’ì„ ë°”ê¿€ìˆ˜ ìˆëŠ” ë§ˆì§€ë§‰ í•¨ìˆ˜ëŠ” bind
+//bindë¥¼ ì‚¬ìš©í•˜ë©´ í•¨ìˆ˜ì˜ this ê°’ì„ ì˜êµ¬íˆ ë°”ê¿€ìˆ˜ ìˆë‹¤.
 const bruce = {name : "Bruce"};
 const madeline = {name : "Madeline"};
 
@@ -374,7 +375,7 @@ console.log(bruce);	//{ name: 'Bruce', birthYear: 1274, occupation: 'king' }
 console.log(madeline);	//{ name: 'Madeline' }
 
 // p185 (2)
-//bind´Â ÇÔ¼öÀÇ µ¿ÀÛÀ» ¿µ±¸ÀûÀ¸·Î ¹Ù²Ş 
+//bindëŠ” í•¨ìˆ˜ì˜ ë™ì‘ì„ ì˜êµ¬ì ìœ¼ë¡œ ë°”ê¿ˆ 
 const bruce = {name : "Bruce"};
 
 function update(birthYear, occupation) {
