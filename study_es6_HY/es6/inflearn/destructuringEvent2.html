@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>DestructuringEvent</title>
+</head>
+<body>
+	<div>Warning: this plugin may not work at all in some OSes since it written in JavaScript and uses PyV8 and Google V8 binaries to run. If you experience problems or editor crashes please fill an issue.</div>
+</body>
+</html>
+
+<script type="text/javascript">
+// document.querySelector('div').addEventListener('click',function(evt){
+// 		console.log(evt.target);
+// });
+
+// document.querySelector('div').addEventListener('click',function({target}){
+// 		//console.log(target.tagName);
+// 		console.log(target.innerText);
+// });
+
+document.querySelector('div').addEventListener('click',function({type,target}){;
+		console.log(type,target.tagName);
+});
+</script>
