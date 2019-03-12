@@ -1,25 +1,25 @@
 1. for ~ of
-- for ~ of : ÀÚ½ÅÀÌ °®°í ÀÖÁö ¾Ê´Â °ªÀº Ãâ·ÂÇÏÁö ¾Ê´Â´Ù. for ~ in ¸¦ »ç¿ëÇßÀ»¶§ ¹®Á¦Á¡À» °³¼±?
-- for ~ in Àº object ¸¦ ¼øÈ¸ÇÒ ¶§ »ç¿ë
-(¹è¿­µµ ÀÏÁ¾ÀÇ object¶ó ¼øÈ¸°¡ µÇÁö¸¸ ÀÚ±â ÀÚ½ÅÀÌ °®°íÀÖÁö ¾ÊÀº »óÀ§ÀÇ Ãß°¡µÈ °ªµé±îÁö °á°ú¸¦ ³ªÅ¸³¾ ¼ö ÀÖ´Ù
-=> ¹è¿­¿¡¼­ »ç¿ë x)
-- for ³ª foreach ¿Ü¿¡µµ for ~ of¸¦ ÅëÇØ ¹è¿­À» ½±°Ô ¼øÈ¸ÇÒ ¼ö ÀÖ´Ù.
-- ¹®ÀÚ¿­À» ¹®ÀÚ ´ÜÀ§·Î µ¹¸é¼­ ±× °ªÀ» Ãâ·ÂÇØÁÖ±âµµÇÔ.
+- for ~ of : ìžì‹ ì´ ê°–ê³  ìžˆì§€ ì•ŠëŠ” ê°’ì€ ì¶œë ¥í•˜ì§€ ì•ŠëŠ”ë‹¤. for ~ in ë¥¼ ì‚¬ìš©í–ˆì„ë•Œ ë¬¸ì œì ì„ ê°œì„ ?
+- for ~ in ì€ object ë¥¼ ìˆœíšŒí•  ë•Œ ì‚¬ìš©
+(ë°°ì—´ë„ ì¼ì¢…ì˜ objectë¼ ìˆœíšŒê°€ ë˜ì§€ë§Œ ìžê¸° ìžì‹ ì´ ê°–ê³ ìžˆì§€ ì•Šì€ ìƒìœ„ì˜ ì¶”ê°€ëœ ê°’ë“¤ê¹Œì§€ ê²°ê³¼ë¥¼ ë‚˜íƒ€ë‚¼ ìˆ˜ ìžˆë‹¤
+=> ë°°ì—´ì—ì„œ ì‚¬ìš© x)
+- for ë‚˜ foreach ì™¸ì—ë„ for ~ ofë¥¼ í†µí•´ ë°°ì—´ì„ ì‰½ê²Œ ìˆœíšŒí•  ìˆ˜ ìžˆë‹¤.
+- ë¬¸ìžì—´ì„ ë¬¸ìž ë‹¨ìœ„ë¡œ ëŒë©´ì„œ ê·¸ ê°’ì„ ì¶œë ¥í•´ì£¼ê¸°ë„í•¨.
 
-2. spread operator : ÆîÄ§¿¬»êÀÚ (...)
-... µÚÀÇ °ªÀ» ÆîÃÄÁØ´Ù
+2. spread operator : íŽ¼ì¹¨ì—°ì‚°ìž (...)
+... ë’¤ì˜ ê°’ì„ íŽ¼ì³ì¤€ë‹¤
 ex1) 
 let pre = ["apple", "orange", 100];
 let newData = [...pre];
 console.log(pre, newData);
-/*°°Àº °ªÀÌ ³ª¿Â´Ù. ±×·¯³ª µÎ°³´Â ´Ù¸¥ µ¥ÀÌÅÍ´Ù.
-°°Àº ÂüÁ¶¸¦ À¯ÁöÇÏÁö ¾Ê°í º¹»ç¸¦ ÇÔ.
+/*ê°™ì€ ê°’ì´ ë‚˜ì˜¨ë‹¤. ê·¸ëŸ¬ë‚˜ ë‘ê°œëŠ” ë‹¤ë¥¸ ë°ì´í„°ë‹¤.
+ê°™ì€ ì°¸ì¡°ë¥¼ ìœ ì§€í•˜ì§€ ì•Šê³  ë³µì‚¬ë¥¼ í•¨.
 */
 
 ex2)
 let pre = ["apple", "orange", 100, null];
 let newData = [0,1,2, ...pre, 4];	//[ 0, 1, 2, 'apple', 'orange', 100, null, 4 ]
-//¹è¿­ »çÀÌ¿¡ °ªÀ» º¹»çÇØ¼­ ³Ö°í½ÍÀ»¶§ ÆîÄ§¿¬»êÀÚ »ç¿ë. pre¿Í newData´Â »ó°ü¾ø´Ù. ÆîÄ§¿¬»êÀÚ¸¦ ÅëÇØ ±âÁ¸º¸´Ù ½±°Ô ÇÊ¿äÇÑ À§Ä¡¿¡ ´Ù¸¥ °ªÀ» ºÒ·¯¿Ã ¼ö ÀÖ´Ù
+//ë°°ì—´ ì‚¬ì´ì— ê°’ì„ ë³µì‚¬í•´ì„œ ë„£ê³ ì‹¶ì„ë•Œ íŽ¼ì¹¨ì—°ì‚°ìž ì‚¬ìš©. preì™€ newDataëŠ” ìƒê´€ì—†ë‹¤. íŽ¼ì¹¨ì—°ì‚°ìžë¥¼ í†µí•´ ê¸°ì¡´ë³´ë‹¤ ì‰½ê²Œ í•„ìš”í•œ ìœ„ì¹˜ì— ë‹¤ë¥¸ ê°’ì„ ë¶ˆëŸ¬ì˜¬ ìˆ˜ ìžˆë‹¤
 
 ex3)
 function sum(a,b,c) {
@@ -27,11 +27,11 @@ function sum(a,b,c) {
 }
 let pre = [100,200,300];
 
-console.log(sum.apply(null,pre));	//600, ÆîÄ§¿¬»êÀÚ Àü¿¡´Â ÀÌ ¹æ¹ý »ç¿ë. apply : ¹è¿­ ±×´ë·Î¸¦ Àü´Þ
-console.log(sum(...pre));	//600, apply ÀÌ¿ëÇØ¼­ ºÒÇÊ¿äÇÏ°Ô null°ª ³ÖÀ» ÇÊ¿ä¾ø¾îÁü. 
+console.log(sum.apply(null,pre));	//600, íŽ¼ì¹¨ì—°ì‚°ìž ì „ì—ëŠ” ì´ ë°©ë²• ì‚¬ìš©. apply : ë°°ì—´ ê·¸ëŒ€ë¡œë¥¼ ì „ë‹¬
+console.log(sum(...pre));	//600, apply ì´ìš©í•´ì„œ ë¶ˆí•„ìš”í•˜ê²Œ nullê°’ ë„£ì„ í•„ìš”ì—†ì–´ì§. 
 
-=> ¹è¿­°ªÀ» ¸Å°³º¯¼ö·Î ÇÒ´çÇÏ´Â°Ô ½¬¿öÁü.
-¹è¿­À» ¹Ù²ÙÁö ¾Ê°í »õ·Î¿î °ªÀ» º¹»çÇÒ ¼ö ÀÖÀ½. ¹è¿­À» ÇÕÄ¡°Å³ª »õ·Î¿î ÇÔ¼öÀÇ ÆÄ¶ó¹ÌÅÍ·Î Àü´ÞÇÒ ¶§ À¯¿ëÇÏ°Ô ¾µ ¼ö ÀÖÀ½.
+=> ë°°ì—´ê°’ì„ ë§¤ê°œë³€ìˆ˜ë¡œ í• ë‹¹í•˜ëŠ”ê²Œ ì‰¬ì›Œì§.
+ë°°ì—´ì„ ë°”ê¾¸ì§€ ì•Šê³  ìƒˆë¡œìš´ ê°’ì„ ë³µì‚¬í•  ìˆ˜ ìžˆìŒ. ë°°ì—´ì„ í•©ì¹˜ê±°ë‚˜ ìƒˆë¡œìš´ í•¨ìˆ˜ì˜ íŒŒë¼ë¯¸í„°ë¡œ ì „ë‹¬í•  ë•Œ ìœ ìš©í•˜ê²Œ ì“¸ ìˆ˜ ìžˆìŒ.
 
 
 3. from
@@ -44,10 +44,10 @@ function addMark() {
 }
 addMark(1,2,3,4,5);
 
-//arguments : ÀÎÀÚ°ªÀ» ÁÖÁö ¾Ê¾Æµµ Áö¿ªº¯¼ö ³» Æ¯º°ÇÑ º¯¼ö°ªÀ» ÀÌ¿ëÇÏ¿© ÀÎÀÚµéÀ» ¹è¿­°ú ºñ½ÁÇÑ ÇüÅÂ·Î ³ª¿À°Ô..? °´Ã¼.°¡º¯ÀûÀÎ ÆÄ¶ó¹ÌÅÍ°¡ µé¾î¿Ã¶§ °¡²û »ç¿ëÇÏ¸ç, ±ÇÀåÇÏÁø ¾ÊÀ½
+//arguments : ì¸ìžê°’ì„ ì£¼ì§€ ì•Šì•„ë„ ì§€ì—­ë³€ìˆ˜ ë‚´ íŠ¹ë³„í•œ ë³€ìˆ˜ê°’ì„ ì´ìš©í•˜ì—¬ ì¸ìžë“¤ì„ ë°°ì—´ê³¼ ë¹„ìŠ·í•œ í˜•íƒœë¡œ ë‚˜ì˜¤ê²Œ..? ê°ì²´.ê°€ë³€ì ì¸ íŒŒë¼ë¯¸í„°ê°€ ë“¤ì–´ì˜¬ë•Œ ê°€ë” ì‚¬ìš©í•˜ë©°, ê¶Œìž¥í•˜ì§„ ì•ŠìŒ
 
 function addMark() {
-	let newArray = Array.from(arguments);	//arguments·Î ºÎÅÍ ¹è¿­À» ¸¸µç´Ù? arguments´Â ÁøÂ¥ ¹è¿­ÀÌ ¾Æ´Ï±â ¶§¹®
+	let newArray = Array.from(arguments);	//argumentsë¡œ ë¶€í„° ë°°ì—´ì„ ë§Œë“ ë‹¤? argumentsëŠ” ì§„ì§œ ë°°ì—´ì´ ì•„ë‹ˆê¸° ë•Œë¬¸
 	let newData= arguments.map(function(value) {
 		return value + "!";
 	});

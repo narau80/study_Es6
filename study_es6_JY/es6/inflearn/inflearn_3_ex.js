@@ -1,19 +1,19 @@
-//* ½Ç½À¿¹Á¦ *
+//* ì‹¤ìŠµì˜ˆì œ *
 
 function print() {
 	/* 
-	filter, includes, from À» »ç¿ëÇØ¼­ ¹®ÀÚ¿­ 'e'°¡ ³ëµå·Î ±¸¼ºµÈ ¹è¿­ ¸¸µé¾î º¯È¯
+	filter, includes, from ì„ ì‚¬ìš©í•´ì„œ ë¬¸ìì—´ 'e'ê°€ ë…¸ë“œë¡œ êµ¬ì„±ëœ ë°°ì—´ ë§Œë“¤ì–´ ë³€í™˜
 	*/
 	let list = document.querySelectorAll("li");
-	console.log(toString.call(list));	//[object NodeList] - node·Î ±¸¼ºµÈ ¹è¿­ÇüÅÂÀÇ °ª
-	let listArray = Array.from(list);	//li ³ëµå·Î ±¸¼ºµÈ ¹è¿­
-	console.log(toString.call(list));	//[object Array] - array·Î º¯È¯.
+	console.log(toString.call(list));	//[object NodeList] - nodeë¡œ êµ¬ì„±ëœ ë°°ì—´í˜•íƒœì˜ ê°’
+	let listArray = Array.from(list);	//li ë…¸ë“œë¡œ êµ¬ì„±ëœ ë°°ì—´
+	console.log(toString.call(list));	//[object Array] - arrayë¡œ ë³€í™˜.
 	
 	let eArray = listArray.filter(function(v) {
 		return v.innerText.includes("e");
 	});
-	console.log(eArray.length);	// 3. v´Â ½ÇÁ¦ ¹è¿­ÀÇ ¿ä¼Ò(³ëµå)
+	console.log(eArray.length);	// 3. vëŠ” ì‹¤ì œ ë°°ì—´ì˜ ìš”ì†Œ(ë…¸ë“œ)
 }
 print();
 
-//filter¸¦ ¾²±â À§ÇØ fromÀ» ½á¼­ ³ëµå·Î ±¸¼ºµÈ ¹è¿­·Î ¹Ù²ãÁÜ
+//filterë¥¼ ì“°ê¸° ìœ„í•´ fromì„ ì¨ì„œ ë…¸ë“œë¡œ êµ¬ì„±ëœ ë°°ì—´ë¡œ ë°”ê¿”ì¤Œ
