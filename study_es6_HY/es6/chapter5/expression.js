@@ -54,12 +54,47 @@ while(1){
 }
 //console.log(`stopped at ${num}`);
 
-console.log(3+5+"8");//'8'+'8'
-console.log("3"+5+8);//'3' +'5'+'8'
+//console.log(3+5+"8");//'8'+'8'
+//console.log("3"+5+8);//'3' +'5'+'8'
 
+const doIt = true;
+const result = doIt? "Did it" : "Didn't do it."; //if-else
+//console.log(result);
 
+let xx=0,yy=10,z;
+z=(xx++,yy++);
+//z=xx++,yy++;
+//console.log(xx,yy,z);
 
+// console.log(typeof 1);
+// console.log(typeof true);
+// console.log(typeof null);
+// console.log(typeof "");
+// console.log(typeof {});
+// console.log(typeof undefined);
+// console.log(typeof Symbol());
+// console.log(typeof function(){});
 
+const obj ={bo:2,co:3,do:4}; //객체선언
+const {ao,bo,co} = obj; //해체할당
+//console.log(ao,bo,co); //do : error
+
+const  obj1={bn:2,cn:3, dn:4};
+let bn,cn,dn;
+//{bn,cn,dn} = obj; //error
+//console.log(({bn,cn,dn}= obj)); //객체 해체할당만할경우 괄호()필요
+
+const arr =[1,2,3]; //배열선언
+let [xo,yo] = arr; //배열 해체 할당
+//console.log(xo,yo); //zo는 정의 되지 않아 error
+
+const arr2 = [1,2,3,4,5];
+let [q1,q2,...rest] = arr2;
+//console.log(q1,q2,rest);//1 2 [3,4,5]
+
+let v1=5,v2=10;
+[v1,v2] =[v2,v1];
+//console.log(v1,v2);
 
 
 

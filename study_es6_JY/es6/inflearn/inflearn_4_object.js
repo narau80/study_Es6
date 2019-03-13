@@ -33,7 +33,7 @@ function getObj() {
 	}
 	*/
 
-	// ÀÌ¸§°ú value °ªÀÌ ÀÏÄ¡ÇÑ´Ù¸é À§ return¹®À» ¾Æ·¡¿Í °°ÀÌ ½±°Ô ¾µ ¼ö ÀÖ´Ù. ÀÌ·± key°ªÀ¸·Î object¸¦ ½±°Ô ¼±¾ðÇÒ ¼ö ÀÖ´Ù.
+	// ì´ë¦„ê³¼ value ê°’ì´ ì¼ì¹˜í•œë‹¤ë©´ ìœ„ returnë¬¸ì„ ì•„ëž˜ì™€ ê°™ì´ ì‰½ê²Œ ì“¸ ìˆ˜ ìžˆë‹¤. ì´ëŸ° keyê°’ìœ¼ë¡œ objectë¥¼ ì‰½ê²Œ ì„ ì–¸í•  ìˆ˜ ìžˆë‹¤.
 	return{getName, setName}
 }
 
@@ -42,11 +42,11 @@ var obj = getObj();
 console.log(obj.getName()); //crong
 console.log(obj); 
 /*
-return{getName, setName, name}À¸·Î ¼öÁ¤ ÈÄ Ãâ·ÂÇÏ¸é °á°ú´Â
+return{getName, setName, name}ìœ¼ë¡œ ìˆ˜ì • í›„ ì¶œë ¥í•˜ë©´ ê²°ê³¼ëŠ”
 { getName: [Function: getName],
   setName: [Function: setName],
   name: 'crong' }
-  => »õ·Î¿î object ¹ÝÈ¯ÇÒ ¼ö ÀÖ´Ù.
+  => ìƒˆë¡œìš´ object ë°˜í™˜í•  ìˆ˜ ìžˆë‹¤.
 */
 
 3)
@@ -57,4 +57,4 @@ const data = {
 	age
 }
 
-//object ¸®ÅÍ·²À» ½±°Ô ¸¸µé ¼öµµ ÀÖ´Ù..
+//object ë¦¬í„°ëŸ´ì„ ì‰½ê²Œ ë§Œë“¤ ìˆ˜ë„ ìžˆë‹¤..
