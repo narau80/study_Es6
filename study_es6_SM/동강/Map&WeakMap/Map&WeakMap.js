@@ -42,3 +42,6 @@ const wm = new WeakMap();
  }
 let myarea = new Area(10,20);
 console.log(myarea.getArea());
+
+
+myarea = nll;

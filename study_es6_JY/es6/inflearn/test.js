@@ -1,21 +1,17 @@
-let mySet = new Set();
-console.log(toString.call(mySet));	//[object Set]
+let wm = new WeakMap();
+let myfun = function() {};
+//이 함수가 얼마나 실행됐는지 알려고 할때
 
-mySet.add("crong");	
-mySet.add("hary");
-mySet.add("crong");
-//add : set에서 제공하는 메소드
+wm.set(myfun, 0);
 
-console.log(mySet.has("crong"));	//true, has : 값 있는지 확인
+console.log(wm);	//WeakMap { [items unknown] }
 
-mySet.delete("crong");
-
-mySet.forEach(function(v) {	//forEach 통해 루프를 돌림
-	console.log(v);
-})
-
-/*
-crong
-hary
-=> crong이 두 번 있지만 중복된 값 제외
-*/
+for (let i=0; i<10; i++) {
+	count = wm.get(myfun);
+	count++;
+	wm.set(myfun, count);
+}
+console.log(wm);	//WeakMap { [items unknown] }
+console.log(wm.get(myfun));	//10
+myfun = null;
+console.log(wm.get(myfun));	//10
