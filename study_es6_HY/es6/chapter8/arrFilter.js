@@ -1,3 +1,7 @@
+/*
+filter : 필요한 것들만 남김
+*/
+
 const cards=[];
 for(let suit of['H','C','D','S']) //하트, 클로버, 다이아몬드, 스페이드
  for(let value=1;value<=13;value++){
