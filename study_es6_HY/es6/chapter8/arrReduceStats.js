@@ -4,13 +4,24 @@ const stats =data.reduce((a,x)=> {
 	a.N++;
 	let delta = x - a.mean;
 	a.mean += delta/a.N;
-	a.M2 += delta*(x=a.mean);
+	a.M2 += delta*(x-a.mean);
+	console.log(`a.N: ${a.N} , delta: ${delta}, a.mean: ${a.mean}, a.M2: ${a.M2}`);
+	console.log(a);
 	return a;
 },{N:0,mean:0,M2:0});
 
+console.log(stats);
 if(stats.N >2){
 	stats.variance = stats.M2 / (stats.N -1);
 	stats.stdev = Math.sqrt(stats.variance);
 }
-
+console.log(`variance : ${stats.variance} , stdev : ${stats.stdev}`);
 console.log(stats);
+
+/*
+{ N: 7,
+  mean: 6.828571428571428,
+  M2: 63.41428571428572,
+  variance: 10.56904761904762,
+  stdev: 3.2510071699471257 }
+*/

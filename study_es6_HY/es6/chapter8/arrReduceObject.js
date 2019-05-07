@@ -1,8 +1,12 @@
 const words=['Beachball','Rodeo','Angel','Aardvark','Xylophone','November','Chocolate','Papaya','Uniform','Jpker','Clover','Bali'];
 const alphabetical =words.reduce((a,x)=>{
-	console.log(a[x[0]]);
+	//console.log(a[x[0]]);
+	//console.log(x[0]);
 	if(!a[x[0]]) a[x[0]]=[];
+	console.log(a);
 	a[x[0]].push(x);
+	//console.log(a[x[0]]);
+	//console.log(a);
 	return a;
 	}, {});
 
