@@ -7,6 +7,9 @@ const longWords = words.reduce((a,w)=>{
 }, "").trim();
 console.log(longWords);
 
+const longWords2 = words.filter(x=>x.length >6).join(" "); //filter,join 이용
+console.log(longWords2);
+
 /*
 Beachball Aardvark Xylophone November Chocolate Uniform
 */
