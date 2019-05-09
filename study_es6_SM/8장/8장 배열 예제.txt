@@ -1,0 +1,21 @@
+const words = ["Beachball", "Rodeo", "Angel", 
+	"Aardvark", "Xylophone", "November", "Chocolate",
+	"Papaya", "Uniform", "Joker", "Clover", "Bali"];
+const longWords = words.reduce((a,w) => w.length > 6 ? a+" "+w : a, "").trim();
+//longWords : "Beachball Aardvark Xylophone November Chocolate Uniform"
+
+const result = words.filter(a => a.length > 6 );
+
+
+const data = [1, 2, 3, 4, 5, 6, 1];
+const reducer = (accumulator, value, index, array) => {
+  const sumOfAccAndVal = accumulator + value;
+  if (index === array.length - 1) {
+    return (sumOfAccAndVal) / array.length;
+  }
+  return sumOfAccAndVal;
+};
+
+const getMean = data.reduce(reducer, 0);
+console.log(getMean); 
+
