@@ -314,3 +314,74 @@ true
 true
 */
 
+
+// p 237
+class Super {
+	constructor() {
+		this.name = 'Super';
+		this.isSuper = true;
+	}
+}
+//유효하지만, 권장하지는 않음.
+Super.prototype.sneaky = 'not recommeded!';
+
+class Sub extends Super {
+	constructor() {
+		super();
+		this.name = 'Sub';
+		this.isSub = true;
+	}
+}
+
+const obj = new Sub();
+
+for(let p in obj) {
+	console.log(`${p}: ${obj[p]}` + (obj.hasOwnProperty(p) ? '' : ' (inherited)'));
+}
+
+/*
+결과 (책이랑 비교하기)
+*/
+
+// p 239
+class Car {
+	toString() {
+		return `${this.make} ${this.model} : ${this.vin}`;
+	}
+	//...
+
+// p 240 (1)
+class InsurancePolicy {}
+function makeInsurable(o) {
+	o.addInsurancePolicy = function(p) {this.insurancePolicy = p;}
+	o.getInsurancePolicy = function() {return this.insurancePolicy;}
+	o.isInsured = function() {return !!this.insurancePolicy;}
+}
+
+makeInsurable(Car);
+
+const car1 = new Car();
+car1.addInsurancePolicy(new InsurancePolicy());		//error
+
+
+// p 240 (2)
+const car1 = new Car();
+makeInsurable(car1);
+car1.addInsurancePolicy(new InsurancePolicy());	//works
+
+makeInsurable(Car.prototype);
+const car1 = new Car();
+car1.addInsurancePolicy(new InsurancePolicy());	//works
+
+
+// p 241
+class InsurancePolicy {}
+const ADD_POLICY = Symbol();
+const GET_POLICY = Symbol();
+const IS_INSURED = Symbol();
+const _POLICY = Symbol();
+function makeInsurable(o) {
+	o[ADD_POLICY] = function(p) {this[_POLICY] = p;}
+	o[GET_POLICY] = function(p) {return this[_POLICY];}
+	o[IS_INSURED] = function(p) {return !!this[_POLICY];}
+}
