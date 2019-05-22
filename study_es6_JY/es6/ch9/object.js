@@ -319,10 +319,10 @@ true
 class Super {
 	constructor() {
 		this.name = 'Super';
-		this.isSuper = true;
+		this.isSuper = true;	//슈퍼클래스 생성자에서 선언한 프로퍼티는 서브클래스 인스턴스에도 정의됨.
 	}
 }
-//유효하지만, 권장하지는 않음.
+//유효하지만, 권장하지는 않음. => 슈퍼클래스 프로토타입에 직접 정의.
 Super.prototype.sneaky = 'not recommeded!';
 
 class Sub extends Super {
@@ -340,16 +340,26 @@ for(let p in obj) {
 }
 
 /*
-결과 (책이랑 비교하기)
+결과
+"name: Sub"
+"isSuper: true"
+"isSub: true"
+"sneaky: not recommeded! (inherited)"
 */
 
 // p 239
+모든 객체는 Object를 상속하므로 Object의 메서드는 기본적으로 모든 객체에서 사용할 수 있음.
+* toString : 객체의 기본적인 문자열 표현을 제공함, 객체에 관한 중요한 정보를 제공한다면 디버깅에도 유용하고 객체를 한 눈에 파악 할 수 있음.
+ex) Car 클래스의 toString 메서드가 제조사,모델,VIN을 반환하도록
 class Car {
 	toString() {
 		return `${this.make} ${this.model} : ${this.vin}`;
+		//Car의 인스턴스에서 toString을 호출하면 객체 식별에 필요한 정보를 얻게됨.
 	}
 	//...
 
+*다중상속 : 클래스가 슈퍼클래스를 두 개 가지는 기능, 충돌의 위험이 있음.
+*믹스인 : 다중상속에 대한 해답?! 기능을 필요한 만큼 섞어 놓은 것.
 // p 240 (1)
 class InsurancePolicy {}
 function makeInsurable(o) {
@@ -361,13 +371,11 @@ function makeInsurable(o) {
 makeInsurable(Car);
 
 const car1 = new Car();
-car1.addInsurancePolicy(new InsurancePolicy());		//error
+car1.addInsurancePolicy(new InsurancePolicy());		//error, 아래와 같이함 
 
-
-// p 240 (2)
 const car1 = new Car();
 makeInsurable(car1);
-car1.addInsurancePolicy(new InsurancePolicy());	//works
+car1.addInsurancePolicy(new InsurancePolicy());	//works	=> 난 에러남
 
 makeInsurable(Car.prototype);
 const car1 = new Car();
