@@ -18,6 +18,9 @@ class Car{
 	static areSame(c1,c2){
 		return c1.vin === c2.vin;
 	}
+	toString(){
+		return `${this.make} ${this.model} : ${this.vin}`;
+	}
 
 }
 
@@ -51,6 +54,13 @@ false
 
 */
 
+console.log(c1.toString());
+console.log(c2.toString());
+console.log(c3.toString());
 
 
-
+/*
+Tesla S : 0
+Mazda 3 : 1
+Mazda 3 : 2
+*/
