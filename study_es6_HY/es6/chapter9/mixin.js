@@ -6,11 +6,14 @@ const GET_POLICY = Symbol();
 const IS_INSURED = Symbol();
 const _POLICY = Symbol();
 
+/**/
 function makeInsuranable(o){
 	o[ADD_POLICY] = function(p){this[_POLICY] =p;}
 	o[GET_POLICY] = function(){return this[_POLICY];}
 	o[IS_INSURED] = function(){return !!this[_POLICY];}
 }
+
+/**/
 function makeInsuranable(o){
 	o.addInsurancePolicy = function(p){this.InsurancePolicy =p;}
 	o.getInsurancePolicy = function(){return this.insurncePolicy;}
@@ -18,13 +21,14 @@ function makeInsuranable(o){
 }
 
 makeInsuranable(Car);
-
 const c1 = new Car();
 //c1.addInsurancePolicy(new InsurancePolicy()); //error : : c1.addInsurancePolicy is not a function
 
 makeInsuranable(c1);
 c1.addInsurancePolicy(new InsurancePolicy());
+console.log(c);
 
 makeInsuranable(Car.prototype);
 const c2 = new Car();
 c2.addInsurancePolicy(new InsurancePolicy());
+console.log(c);
