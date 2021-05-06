@@ -4,7 +4,7 @@
   "description": "= Learning JavaScript, 3rd Edition\r == Chapter 2: JavaScript Development Tools\r  In this chapter we're learning about GIt and other\r  development tools.",
   "main": "index.js",
   "dependencies": {
-    "underscore": "^1.8.0"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {},
   "scripts": {
